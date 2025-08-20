@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./IranYekan.css";
+
 
 :root {
   --background: #ffffff;

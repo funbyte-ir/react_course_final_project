@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Box } from "@mui/material";
+import { Box, Container, CssBaseline, InitColorSchemeScript, ThemeProvider } from "@mui/material";
 import MyAppBar from "@/components/appbar";
+import theme from "@/theme";
 
 
 
@@ -17,13 +18,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="rtl">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Box>
-          <MyAppBar />
-          {children}
-        </Box>
+      <body>
+        <InitColorSchemeScript attribute="class" />
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <MyAppBar />
+            <Container maxWidth="lg">
+              <Box
+                sx={{
+                  my: 4,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                {children}
+              </Box>
+            </Container>
+          </ThemeProvider>
       </body>
     </html>
   );
