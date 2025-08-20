@@ -1,6 +1,7 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { IoMenu } from "react-icons/io5";
 import ModeSwitch from "./mode_switch";
+import UserButton from "./user_button";
 
 export default function MyAppBar(){
     return <AppBar position="static" color="transparent">
@@ -18,7 +19,7 @@ export default function MyAppBar(){
             فان بایت
           </Typography>
           <ModeSwitch />
-          <Button color="inherit">ورود</Button>
+          <UserButton />
         </Toolbar>
       </AppBar>;
 }
